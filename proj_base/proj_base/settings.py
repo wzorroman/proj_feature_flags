@@ -51,7 +51,7 @@ LOCAL_APPS = [
     'app_base',
 ]
 THIRD_PARTY_APPS = [
-    
+    'waffle'
 ]    
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -64,7 +64,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'waffle.middleware.WaffleMiddleware'
 ]
+
 
 ROOT_URLCONF = 'proj_base.urls'
 
