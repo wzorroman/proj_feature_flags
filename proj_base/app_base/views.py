@@ -15,4 +15,9 @@ def index(request):
         """Behavior if flag is inactive."""
         msg_flag = "FLAG Inactive"
 
-    return HttpResponse(f"Bienvenidos al app base| {msg_flag}")
+    if waffle.switch_is_active('IS_ACTIVE_CUSTOM_SWITCH'):
+        msg_switch = "SWITCH active"
+    else:
+        msg_switch = "SWITCH inactive"
+
+    return HttpResponse(f"Bienvenidos al app base| {msg_flag} | {msg_switch}")
